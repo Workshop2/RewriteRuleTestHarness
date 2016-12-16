@@ -3,6 +3,9 @@
   <rule name="redirecty" stopProcessing="false">
     <match url="url-stuffz" ignoreCase="false" />
     <conditions logicalGrouping="MatchAny" trackAllCaptures="true" />
+    <serverVariables>
+      <set name="namey" value="valuey" />
+    </serverVariables>
     <action type="Redirect" url="some-url" appendQueryString="false" redirectType="Temporary" />
   </rule>
 </rules>

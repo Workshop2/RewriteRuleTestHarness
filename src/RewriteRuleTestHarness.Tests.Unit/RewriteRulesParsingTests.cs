@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using Moq;
 using NUnit.Framework;
 using RewriteRuleTestHarness.Models;
@@ -29,7 +29,7 @@ namespace RewriteRuleTestHarness.Tests.Unit
 
             // when
             var parser = new RewriteRulesParser(_fileStreamer.Object);
-            InboundRules rules = parser.ParseRules(path);
+            InboundRules rules = parser.ParseInboundRules(path);
 
             // then
             Assert.That(stream.CanRead, Is.False);
@@ -72,7 +72,7 @@ namespace RewriteRuleTestHarness.Tests.Unit
 
             // when
             var parser = new RewriteRulesParser(_fileStreamer.Object);
-            InboundRules rules = parser.ParseRules(path);
+            InboundRules rules = parser.ParseInboundRules(path);
 
             // then
             Assert.That(rules.Rules.Length, Is.EqualTo(1));
@@ -87,6 +87,10 @@ namespace RewriteRuleTestHarness.Tests.Unit
             Assert.That(rule.Conditions.ConditionList, Is.Null);
             Assert.That(rule.Conditions.LogicalGrouping, Is.EqualTo(LogicalGroupingType.MatchAny));
             Assert.That(rule.Conditions.TrackAllCaptures, Is.True);
+
+            Assert.That(rule.ServerVariables.ServerVariablesList.Length, Is.EqualTo(1));
+            Assert.That(rule.ServerVariables.ServerVariablesList[0].Name, Is.EqualTo("namey"));
+            Assert.That(rule.ServerVariables.ServerVariablesList[0].Value, Is.EqualTo("valuey"));
 
             Assert.That(rule.Action.Type, Is.EqualTo(ActionType.Redirect));
             Assert.That(rule.Action.Url, Is.EqualTo("some-url"));
@@ -107,7 +111,7 @@ namespace RewriteRuleTestHarness.Tests.Unit
 
             // when
             var parser = new RewriteRulesParser(_fileStreamer.Object);
-            InboundRules rules = parser.ParseRules(path);
+            InboundRules rules = parser.ParseInboundRules(path);
 
             // then
             Assert.That(rules.Rules.Length, Is.EqualTo(1));
@@ -136,7 +140,7 @@ namespace RewriteRuleTestHarness.Tests.Unit
 
             // when
             var parser = new RewriteRulesParser(_fileStreamer.Object);
-            InboundRules rules = parser.ParseRules(path);
+            InboundRules rules = parser.ParseInboundRules(path);
 
             // then
             Assert.That(rules.Rules.Length, Is.EqualTo(3));

@@ -15,7 +15,7 @@ namespace RewriteRuleTestHarness
             _fileStreamerer = fileStreamerer;
         }
 
-        public InboundRules ParseRules(string pathToXmlRules)
+        public InboundRules ParseInboundRules(string pathToXmlRules)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(InboundRules));
 
