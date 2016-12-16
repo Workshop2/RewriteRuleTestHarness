@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("RewriteRuleTestHarness")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("An easy to use test harness to help unit test rewrite rules")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Workshop2")]
 [assembly: AssemblyProduct("RewriteRuleTestHarness")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
