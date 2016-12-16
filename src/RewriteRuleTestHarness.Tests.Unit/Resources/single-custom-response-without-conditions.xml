@@ -2,6 +2,6 @@
 <rules>
   <rule name="customy">
     <match url="me-likey" />
-    <action type="CustomResponse" statusCode="403" statusReason="Unauthorised" statusDescription="Unauthorised" />
+    <action type="CustomResponse" statusCode="403" statusReason="Unauthorised" statusDescription="Unauthorised" logRewrittenUrl="true" />
   </rule>
 </rules>

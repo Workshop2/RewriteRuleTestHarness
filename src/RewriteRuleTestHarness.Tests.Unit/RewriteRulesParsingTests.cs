@@ -127,6 +127,7 @@ namespace RewriteRuleTestHarness.Tests.Unit
             Assert.That(rule.Action.StatusCode, Is.EqualTo(403));
             Assert.That(rule.Action.StatusReason, Is.EqualTo("Unauthorised"));
             Assert.That(rule.Action.StatusDescription, Is.EqualTo("Unauthorised"));
+            Assert.That(rule.Action.LogRewrittenUrl, Is.True);
         }
 
         [Test]

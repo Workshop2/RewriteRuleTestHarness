@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace RewriteRuleTestHarness.Models
 {
     [System.Xml.Serialization.XmlType(AnonymousType = true)]
@@ -11,5 +13,8 @@ namespace RewriteRuleTestHarness.Models
         
         [System.Xml.Serialization.XmlAttribute("trackAllCaptures")]
         public bool TrackAllCaptures { get; set; }
+
+        public Condition this[int index] => ConditionList[index];
+        public Condition this[string input] => ConditionList.FirstOrDefault(x => x.Input.Equals(input));
     }
 }

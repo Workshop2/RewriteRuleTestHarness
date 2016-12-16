@@ -36,10 +36,10 @@ namespace RewriteRuleTestHarness.Tests.Unit
             {
                 Rules = new[]
                 {
-                    new Rule { Name = "not-me" },
-                    new Rule { Name = "not-me2" },
-                    new Rule { Name = "not-me3" },
-                    new Rule { Name = "me" },
+                    new Rule(),
+                    new Rule(),
+                    new Rule(),
+                    new Rule()
                 }
             };
 

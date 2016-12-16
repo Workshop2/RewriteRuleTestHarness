@@ -52,8 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ConditionTests.cs" />
+    <Compile Include="ServerVariablesTests.cs" />
     <Compile Include="Extensions\InboundRulesTests.cs" />
     <Compile Include="FileStreamererTests.cs" />
+    <Compile Include="ConditionsTests.cs" />
     <Compile Include="InboundRulesTests.cs" />
     <Compile Include="RewriteRulesParsingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
