@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/p2qtxrxry7y7gilw?svg=true)](https://ci.appveyor.com/project/Workshop2/RewriteRuleTestHarness)[![Nuget.org](https://img.shields.io/nuget/v/RewriteRuleTestHarness.svg?style=flat)](https://www.nuget.org/packages/RewriteRuleTestHarness)
+
 # RewriteRuleTestHarness
 A fully tested simple nuget package to help you test Rewrite rules in IIS.
 
