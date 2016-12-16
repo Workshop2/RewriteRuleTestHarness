@@ -74,5 +74,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\single-custom-response-without-conditions.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\multiple-rules.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

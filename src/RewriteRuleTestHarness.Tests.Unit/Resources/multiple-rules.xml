@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rules>
+  <rule name="customy">
+    <match url="me-likey" />
+    <action type="CustomResponse" statusCode="403" statusReason="Unauthorised" statusDescription="Unauthorised" />
+  </rule>
+  <rule name="customy">
+    <match url="me-likey" />
+    <action type="CustomResponse" statusCode="403" statusReason="Unauthorised" statusDescription="Unauthorised" />
+  </rule>
+  <rule name="name-data" stopProcessing="true">
+    <match url="url-data" ignoreCase="true" />
+    <conditions logicalGrouping="MatchAll" trackAllCaptures="false">
+      <add input="input-data" pattern="pattern-data" negate="true" />
+      <add input="more-input-data" pattern="more-pattern-data" negate="false" />
+    </conditions>
+    <action type="Rewrite" url="url-data" appendQueryString="true" />
+  </rule>
+</rules>

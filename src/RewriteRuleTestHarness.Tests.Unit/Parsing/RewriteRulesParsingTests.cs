@@ -122,5 +122,24 @@ namespace RewriteRuleTestHarness.Tests.Unit.Parsing
             Assert.That(rule.Action.StatusReason, Is.EqualTo("Unauthorised"));
             Assert.That(rule.Action.StatusDescription, Is.EqualTo("Unauthorised"));
         }
+
+        [Test]
+        public void should_correctly_parse_multiple_rules()
+        {
+            // given
+            const string path = "some-path";
+
+            Stream stream = Resources.ResourceReader.StreamEmbeddedFile(Resources.ResourceReader.MultipleRules);
+            _fileStreamer
+                .Setup(x => x.ReadFile(path))
+                .Returns(stream);
+
+            // when
+            var parser = new RewriteRulesParser(_fileStreamer.Object);
+            InboundRules rules = parser.ParseRules(path);
+
+            // then
+            Assert.That(rules.Rules.Length, Is.EqualTo(3));
+        }
     }
 }
