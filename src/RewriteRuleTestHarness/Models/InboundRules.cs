@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace RewriteRuleTestHarness.Models
 {
     [System.Xml.Serialization.XmlType(AnonymousType = true)]
@@ -6,5 +8,8 @@ namespace RewriteRuleTestHarness.Models
     {
         [System.Xml.Serialization.XmlElement("rule")]
         public Rule[] Rules { get; set; }
+
+        public Rule this[string ruleName] => Rules.FirstOrDefault(x => x.Name.Equals(ruleName));
+        public Rule this[int index] => Rules[index];
     }
 }

@@ -13,7 +13,7 @@ namespace RewriteRuleTestHarness.Tests.Unit.Extensions
             // given
             var rules = new InboundRules
             {
-                Rules = new []
+                Rules = new[]
                 {
                     new Rule { Match = new Match { Url = "^wrong-url$", IgnoreCase = true } },
                     new Rule { Match = new Match { Url = "^another-wrong-url$", IgnoreCase = true } },
