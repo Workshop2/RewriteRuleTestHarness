@@ -1,10 +1,9 @@
 ﻿using System.IO;
-using System.Xml.Linq;
 using Moq;
 using NUnit.Framework;
 using RewriteRuleTestHarness.Models;
 
-namespace RewriteRuleTestHarness.Tests.Unit.Parsing
+namespace RewriteRuleTestHarness.Tests.Unit
 {
     [TestFixture]
     public class RewriteRulesParsingTests

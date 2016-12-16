@@ -52,7 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Parsing\RewriteRulesParsingTests.cs" />
+    <Compile Include="FileStreamererTests.cs" />
+    <Compile Include="RewriteRulesParsingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\ResourceReader.cs" />
   </ItemGroup>

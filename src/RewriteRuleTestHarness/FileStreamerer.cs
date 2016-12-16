@@ -6,7 +6,7 @@ namespace RewriteRuleTestHarness
     {
         public Stream ReadFile(string path)
         {
-            throw new System.NotImplementedException();
+            return File.OpenRead(path);
         }
     }
 }
