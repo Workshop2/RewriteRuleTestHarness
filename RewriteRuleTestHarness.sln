@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.25920.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RewriteRuleTestHarness", "src\RewriteRuleTestHarness\RewriteRuleTestHarness.csproj", "{CF60AD75-C863-4D4F-B30C-35B5A7C02686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RewriteRuleTestHarness.Tests.Unit", "src\RewriteRuleTestHarness.Tests.Unit\RewriteRuleTestHarness.Tests.Unit.csproj", "{13298DFC-43A8-4FD6-985B-4F17EEEFAB5B}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF60AD75-C863-4D4F-B30C-35B5A7C02686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF60AD75-C863-4D4F-B30C-35B5A7C02686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF60AD75-C863-4D4F-B30C-35B5A7C02686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF60AD75-C863-4D4F-B30C-35B5A7C02686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13298DFC-43A8-4FD6-985B-4F17EEEFAB5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13298DFC-43A8-4FD6-985B-4F17EEEFAB5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13298DFC-43A8-4FD6-985B-4F17EEEFAB5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13298DFC-43A8-4FD6-985B-4F17EEEFAB5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
