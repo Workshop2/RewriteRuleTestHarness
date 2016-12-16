@@ -18,7 +18,11 @@ namespace RewriteRuleTestHarness
         public InboundRules ParseRules(string pathToXmlRules)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(InboundRules));
-            return serializer.Deserialize(_fileStreamerer.ReadFile(pathToXmlRules)) as InboundRules;
+
+            using (var stream = _fileStreamerer.ReadFile(pathToXmlRules))
+            {
+                return serializer.Deserialize(stream) as InboundRules;
+            }
         }
     }
 }

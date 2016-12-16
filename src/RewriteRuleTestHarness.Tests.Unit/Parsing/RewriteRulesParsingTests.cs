@@ -33,6 +33,7 @@ namespace RewriteRuleTestHarness.Tests.Unit.Parsing
             InboundRules rules = parser.ParseRules(path);
 
             // then
+            Assert.That(stream.CanRead, Is.False);
             Assert.That(rules.Rules.Length, Is.EqualTo(1));
 
             var rule = rules.Rules[0];
