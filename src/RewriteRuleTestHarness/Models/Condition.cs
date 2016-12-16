@@ -11,5 +11,8 @@ namespace RewriteRuleTestHarness.Models
 
         [System.Xml.Serialization.XmlAttribute("negate")]
         public bool Negate { get; set; }
+
+        [System.Xml.Serialization.XmlAttribute("ignoreCase")]
+        public bool IgnoreCase { get; set; } = true;
     }
 }

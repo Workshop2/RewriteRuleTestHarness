@@ -8,6 +8,6 @@ namespace RewriteRuleTestHarness.Models
         public string Url { get; set; }
         
         [System.Xml.Serialization.XmlAttribute("ignoreCase")]
-        public bool IgnoreCase { get; set; }
+        public bool IgnoreCase { get; set; } = true;
     }
 }

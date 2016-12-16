@@ -45,6 +45,7 @@
     <Compile Include="Models\ActionType.cs" />
     <Compile Include="Models\Action.cs" />
     <Compile Include="Models\Extensions\InboundRulesExtensions.cs" />
+    <Compile Include="Models\Extensions\ConditionExtensions.cs" />
     <Compile Include="Models\Extensions\MatchExtensions.cs" />
     <Compile Include="Models\LogicalGroupingType.cs" />
     <Compile Include="Models\RedirectType.cs" />

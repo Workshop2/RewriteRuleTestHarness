@@ -49,10 +49,12 @@ namespace RewriteRuleTestHarness.Tests.Unit
             Assert.That(rule.Conditions.ConditionList[0].Input, Is.EqualTo("input-data"));
             Assert.That(rule.Conditions.ConditionList[0].Pattern, Is.EqualTo("pattern-data"));
             Assert.That(rule.Conditions.ConditionList[0].Negate, Is.True);
+            Assert.That(rule.Conditions.ConditionList[0].IgnoreCase, Is.True);
 
             Assert.That(rule.Conditions.ConditionList[1].Input, Is.EqualTo("more-input-data"));
             Assert.That(rule.Conditions.ConditionList[1].Pattern, Is.EqualTo("more-pattern-data"));
             Assert.That(rule.Conditions.ConditionList[1].Negate, Is.False);
+            Assert.That(rule.Conditions.ConditionList[1].IgnoreCase, Is.False);
 
             Assert.That(rule.Action.Type, Is.EqualTo(ActionType.Rewrite));
             Assert.That(rule.Action.Url, Is.EqualTo("url-data"));

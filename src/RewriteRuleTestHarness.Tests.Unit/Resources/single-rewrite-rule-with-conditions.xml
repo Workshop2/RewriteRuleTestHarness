@@ -4,7 +4,7 @@
     <match url="url-data" ignoreCase="true" />
     <conditions logicalGrouping="MatchAll" trackAllCaptures="false">
       <add input="input-data" pattern="pattern-data" negate="true" />
-      <add input="more-input-data" pattern="more-pattern-data" negate="false" />
+      <add input="more-input-data" pattern="more-pattern-data" negate="false" ignoreCase="false" />
     </conditions>
     <action type="Rewrite" url="url-data" appendQueryString="true" />
   </rule>
