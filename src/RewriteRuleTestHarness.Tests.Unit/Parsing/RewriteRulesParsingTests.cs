@@ -63,7 +63,7 @@ namespace RewriteRuleTestHarness.Tests.Unit.Parsing
         public void should_correctly_parse_single_redirect_rule()
         {
             // given
-            const string path = "i different path";
+            const string path = "a different path";
 
             Stream stream = Resources.ResourceReader.StreamEmbeddedFile(Resources.ResourceReader.SingleRedirectRuleWithoutConditions);
             _fileStreamer
@@ -87,11 +87,40 @@ namespace RewriteRuleTestHarness.Tests.Unit.Parsing
             Assert.That(rule.Conditions.ConditionList, Is.Null);
             Assert.That(rule.Conditions.LogicalGrouping, Is.EqualTo(LogicalGroupingType.MatchAny));
             Assert.That(rule.Conditions.TrackAllCaptures, Is.True);
-            
+
             Assert.That(rule.Action.Type, Is.EqualTo(ActionType.Redirect));
             Assert.That(rule.Action.Url, Is.EqualTo("some-url"));
             Assert.That(rule.Action.AppendQueryString, Is.False);
             Assert.That(rule.Action.RedirectType, Is.EqualTo(RedirectType.Temporary));
+        }
+
+        [Test]
+        public void should_correctly_parse_single_custom_response_rule()
+        {
+            // given
+            const string path = "some-path";
+
+            Stream stream = Resources.ResourceReader.StreamEmbeddedFile(Resources.ResourceReader.CustomResponseRuleWithoutConditions);
+            _fileStreamer
+                .Setup(x => x.ReadFile(path))
+                .Returns(stream);
+
+            // when
+            var parser = new RewriteRulesParser(_fileStreamer.Object);
+            InboundRules rules = parser.ParseRules(path);
+
+            // then
+            Assert.That(rules.Rules.Length, Is.EqualTo(1));
+
+            var rule = rules.Rules[0];
+            Assert.That(rule.Name, Is.EqualTo("customy"));
+            Assert.That(rule.Match.Url, Is.EqualTo("me-likey"));
+            Assert.That(rule.Conditions, Is.Null);
+
+            Assert.That(rule.Action.Type, Is.EqualTo(ActionType.CustomResponse));
+            Assert.That(rule.Action.StatusCode, Is.EqualTo(403));
+            Assert.That(rule.Action.StatusReason, Is.EqualTo("Unauthorised"));
+            Assert.That(rule.Action.StatusDescription, Is.EqualTo("Unauthorised"));
         }
     }
 }

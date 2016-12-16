@@ -71,5 +71,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\single-rewrite-rule-with-conditions.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\single-custom-response-without-conditions.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
