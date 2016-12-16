@@ -7,6 +7,7 @@ namespace RewriteRuleTestHarness.Tests.Unit.Resources
     public class ResourceReader
     {
         public const string SingleRewriteRuleWithConditions = "single-rewrite-rule-with-conditions.xml";
+        public const string SingleRedirectRuleWithoutConditions = "single-redirect-rule-without-conditions.xml";
 
         public static string ReadEmbeddedFile(string file)
         {

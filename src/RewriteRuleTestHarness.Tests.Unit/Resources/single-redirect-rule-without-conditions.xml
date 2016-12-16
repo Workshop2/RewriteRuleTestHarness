@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rules>
+  <rule name="redirecty" stopProcessing="false">
+    <match url="url-stuffz" ignoreCase="false" />
+    <conditions logicalGrouping="MatchAny" trackAllCaptures="true" />
+    <action type="Redirect" url="some-url" appendQueryString="false" redirectType="Temporary" />
+  </rule>
+</rules>

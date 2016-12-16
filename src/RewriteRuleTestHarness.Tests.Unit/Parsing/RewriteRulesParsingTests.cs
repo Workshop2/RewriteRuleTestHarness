@@ -58,5 +58,40 @@ namespace RewriteRuleTestHarness.Tests.Unit.Parsing
             Assert.That(rule.Action.Url, Is.EqualTo("url-data"));
             Assert.That(rule.Action.AppendQueryString, Is.True);
         }
+
+        [Test]
+        public void should_correctly_parse_single_redirect_rule()
+        {
+            // given
+            const string path = "i different path";
+
+            Stream stream = Resources.ResourceReader.StreamEmbeddedFile(Resources.ResourceReader.SingleRedirectRuleWithoutConditions);
+            _fileStreamer
+                .Setup(x => x.ReadFile(path))
+                .Returns(stream);
+
+            // when
+            var parser = new RewriteRulesParser(_fileStreamer.Object);
+            InboundRules rules = parser.ParseRules(path);
+
+            // then
+            Assert.That(rules.Rules.Length, Is.EqualTo(1));
+
+            var rule = rules.Rules[0];
+            Assert.That(rule.Name, Is.EqualTo("redirecty"));
+            Assert.That(rule.StopProcessing, Is.False);
+
+            Assert.That(rule.Match.Url, Is.EqualTo("url-stuffz"));
+            Assert.That(rule.Match.IgnoreCase, Is.False);
+
+            Assert.That(rule.Conditions.ConditionList, Is.Null);
+            Assert.That(rule.Conditions.LogicalGrouping, Is.EqualTo(LogicalGroupingType.MatchAny));
+            Assert.That(rule.Conditions.TrackAllCaptures, Is.True);
+            
+            Assert.That(rule.Action.Type, Is.EqualTo(ActionType.Redirect));
+            Assert.That(rule.Action.Url, Is.EqualTo("some-url"));
+            Assert.That(rule.Action.AppendQueryString, Is.False);
+            Assert.That(rule.Action.RedirectType, Is.EqualTo(RedirectType.Temporary));
+        }
     }
 }

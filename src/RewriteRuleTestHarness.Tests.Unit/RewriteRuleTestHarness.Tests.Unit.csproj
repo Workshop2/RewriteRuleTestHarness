@@ -65,7 +65,9 @@
       <Name>RewriteRuleTestHarness</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\single-redirect-rule-without-conditions.xml" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\single-rewrite-rule-with-conditions.xml" />
   </ItemGroup>

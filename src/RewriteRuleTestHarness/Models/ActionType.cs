@@ -4,6 +4,7 @@
     {
         None,
         Redirect,
-        Rewrite
+        Rewrite,
+        CustomResponse
     }
 }
