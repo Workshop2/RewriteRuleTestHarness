@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\InboundRulesTests.cs" />
     <Compile Include="FileStreamererTests.cs" />
     <Compile Include="RewriteRulesParsingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
